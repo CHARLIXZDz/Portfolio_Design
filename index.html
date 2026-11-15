@@ -9,7 +9,7 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Ekalat Phommaseng | Graphic Designer Portfolio</title>
+        <title>Ekalat Phommaseng | Designer & Developer Portfolio</title>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -24,7 +24,8 @@
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#design" class="nav__link">Design</a></li>
+                        <li class="nav__item"><a href="#software" class="nav__link">Software</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -44,9 +45,15 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Ekalat</span><br> Graphic Designer</h1>
+                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Ekalat</span><br> Designer & Developer</h1>
+                    <p style="margin-bottom: 2rem; color: var(--text-color); font-size: 1rem; line-height: 1.6; max-width: 440px;">
+                        Bridging the gap between <strong>creative visual design</strong> and <strong>high-performance software engineering</strong>.
+                    </p>
 
-                    <a href="#contact" class="button">Contact</a>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#contact" class="button">Contact Me</a>
+                        <a href="#software" class="button button--ghost">View Software</a>
+                    </div>
                 </div>
 
                 <div class="home__social">
@@ -148,9 +155,9 @@
                 </div>
             </section>
 
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
+            <!--===== DESIGN =====-->
+            <section class="work section" id="design">
+                <h2 class="section-title">Design & Branding</h2>
 
                 <div class="work__container bd-grid">
                     <a href="" class="work__img">
@@ -204,6 +211,81 @@
                     <a href="" class="work__img">
                         <img src="assets/img/work17.jpg" alt="Graduation Poster Ekalat">
                     </a>
+                </div>
+            </section>
+
+            <!--===== SOFTWARE =====-->
+            <section class="software section" id="software">
+                <h2 class="section-title">Software & Web Apps</h2>
+
+                <div class="software__container bd-grid">
+                    <!-- Featured Project: MoneyDairy -->
+                    <div class="software__card">
+                        <div class="software__preview">
+                            <div class="software__mockup">
+                                <div class="software__mockup-bar">
+                                    <span class="software__mockup-dot red"></span>
+                                    <span class="software__mockup-dot yellow"></span>
+                                    <span class="software__mockup-dot green"></span>
+                                    <span class="software__mockup-url">https://money-dairy.ekalat8.workers.dev</span>
+                                </div>
+                                <div class="software__img-wrapper">
+                                    <img src="assets/img/moneydairy_home.png" alt="MoneyDairy Dashboard" class="software__img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="software__content">
+                            <div class="software__badge-row">
+                                <span class="software__badge software__badge--featured"><i class='bx bxs-star'></i> Featured Web App</span>
+                                <span class="software__badge software__badge--live"><i class='bx bx-radio-circle-marked'></i> Live on Edge</span>
+                            </div>
+
+                            <h3 class="software__title">MoneyDairy — Personal Finance & Expense Tracker</h3>
+                            
+                            <p class="software__description">
+                                A modern, serverless Progressive Web Application (PWA) tailored for Southeast Asian & Lao users. Features real-time cash flow tracking, dynamic budgeting, and integrated local payment gateways (BCEL One Direct, LAO QR, Loca Wallet).
+                            </p>
+
+                            <div class="software__highlights">
+                                <div class="software__highlight-item">
+                                    <i class='bx bx-check-shield software__highlight-icon'></i>
+                                    <div>
+                                        <strong>Edge Computing:</strong> Deployed on Cloudflare Workers for sub-100ms global latency and zero cold starts.
+                                    </div>
+                                </div>
+                                <div class="software__highlight-item">
+                                    <i class='bx bx-line-chart software__highlight-icon'></i>
+                                    <div>
+                                        <strong>Smart Analytics:</strong> Real-time surplus/deficit calculations, category breakdowns, and 12-month trend charts.
+                                    </div>
+                                </div>
+                                <div class="software__highlight-item">
+                                    <i class='bx bx-world software__highlight-icon'></i>
+                                    <div>
+                                        <strong>Trilingual Localization:</strong> Full support for Lao (ພາສາລາວ), Vietnamese (Tiếng Việt), and English.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="software__tags">
+                                <span class="software__tag">Cloudflare Workers</span>
+                                <span class="software__tag">JavaScript (ES6+)</span>
+                                <span class="software__tag">FinTech UI/UX</span>
+                                <span class="software__tag">PWA</span>
+                                <span class="software__tag">Serverless Edge</span>
+                            </div>
+
+                            <div class="software__buttons">
+                                <a href="https://money-dairy.ekalat8.workers.dev/" target="_blank" class="button software__btn">
+                                    <i class='bx bx-link-external'></i> Open Live App
+                                </a>
+                                <a href="assets/img/moneydairy_analytics.png" class="button button--ghost software__btn work__img" title="View Financial Analytics">
+                                    <i class='bx bx-image-alt'></i> View Analytics UI
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
