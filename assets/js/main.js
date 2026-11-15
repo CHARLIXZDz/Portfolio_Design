@@ -55,3 +55,41 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+/*===== WORK LIGHTBOX MODAL =====*/
+const workImgs = document.querySelectorAll('.work__img')
+const modal = document.getElementById('work-modal')
+const modalImg = document.getElementById('work-modal-img')
+const modalClose = document.getElementById('work-modal-close')
+
+if (modal && modalImg) {
+    workImgs.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault()
+            const img = item.querySelector('img')
+            if (img) {
+                modalImg.src = img.src
+                modalImg.alt = img.alt || 'Work preview'
+                modal.classList.add('active')
+                document.body.style.overflow = 'hidden'
+            }
+        })
+    })
+
+    const closeModal = () => {
+        modal.classList.remove('active')
+        document.body.style.overflow = ''
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeModal)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === modalClose) {
+            closeModal()
+        }
+    })
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal()
+        }
+    })
+} 

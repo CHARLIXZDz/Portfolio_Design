@@ -332,18 +332,31 @@ img{
 /* ===== WORK =====*/
 .work{
     &__container{
-        row-gap: 2rem;
+        display: block;
+        column-count: 1;
+        column-gap: 1.5rem;
+        padding-top: 1rem;
     }
     &__img{
+        display: block;
+        width: 100%;
+        height: max-content;
+        margin-bottom: 1.5rem;
+        break-inside: avoid;
         box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15); 
         border-radius: .5rem;
         overflow: hidden;
+        background-color: transparent;
+        cursor: pointer;
         
         & img{
-            transition: 1s;
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform .5s ease;
 
             &:hover{
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
     }
@@ -440,9 +453,10 @@ img{
     }
 
     .work__container{
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 2rem;
-        padding-top: 2rem;
+        display: block;
+        column-count: 2;
+        column-gap: 1.5rem;
+        padding-top: 1.5rem;
     }
 
     .contact{
@@ -517,8 +531,12 @@ img{
         text-align: initial;
     }
     .work__container{
-        grid-template-columns: repeat(3,1fr);
-        column-gap: 2rem;
+        display: block;
+        column-count: 3;
+        column-gap: 1.5rem;
+    }
+    .work__img{
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -534,4 +552,55 @@ img{
             width: 450px;
         }
     }
+}
+
+
+/* ===== LIGHTBOX MODAL ===== */
+.work__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 16, 26, 0.92);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+  cursor: zoom-out;
+}
+.work__modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.work__modal-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.3s ease;
+  cursor: default;
+}
+.work__modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1001;
+}
+.work__modal-close:hover {
+  transform: rotate(90deg);
+  color: var(--first-color);
+}
+@keyframes zoomIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
