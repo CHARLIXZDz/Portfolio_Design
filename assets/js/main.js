@@ -93,3 +93,40 @@ if (modal && modalImg) {
         }
     })
 } 
+
+/*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'bx-sun'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// Obtain current theme and icon
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton && themeButton.classList.contains(iconTheme) ? 'bx-sun' : 'bx-moon'
+
+// Validate if user previously chose a topic
+if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    if (themeButton) {
+        themeButton.classList[selectedIcon === 'bx-sun' ? 'add' : 'remove'](iconTheme)
+    }
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Default to dark mode if system prefers dark
+    document.body.classList.add(darkTheme)
+    if (themeButton) {
+        themeButton.classList.add(iconTheme)
+    }
+}
+
+// Activate / deactivate the theme manually with the button
+if (themeButton) {
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle(darkTheme)
+        themeButton.classList.toggle(iconTheme)
+        localStorage.setItem('selected-theme', getCurrentTheme())
+        localStorage.setItem('selected-icon', getCurrentIcon())
+    })
+} 

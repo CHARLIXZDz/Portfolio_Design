@@ -10,6 +10,14 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
+  /*===== Theme colors =====*/
+  --body-color: #fff;
+  --text-color: hsl(var(--hue-color), 56%, 12%);
+  --container-color: #fff;
+  --card-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  --header-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  --input-border: hsl(var(--hue-color), 56%, 12%);
+  --footer-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -34,6 +42,18 @@
   }
 }
 
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --second-color: hsl(var(--hue-color), 8%, 95%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --text-color: hsl(var(--hue-color), 8%, 88%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --card-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
+  --header-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  --input-border: hsl(var(--hue-color), 20%, 32%);
+  --footer-color: hsl(var(--hue-color), 30%, 8%);
+}
+
 /*===== BASE =====*/
 *, ::before, ::after {
   box-sizing: border-box;
@@ -47,7 +67,9 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--text-color);
+  background-color: var(--body-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 h1, h2, p {
@@ -110,8 +132,9 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  background-color: var(--container-color);
+  box-shadow: var(--header-shadow);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 /*===== NAV =====*/
@@ -130,7 +153,8 @@ img {
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color: var(--container-color);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.25);
     transition: 0.5s;
   }
 }
@@ -154,10 +178,25 @@ img {
   background-color: var(--first-color);
 }
 .nav__logo {
-  color: var(--second-color);
+  color: var(--text-color);
+}
+.nav__btns {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+.change-theme {
+  font-size: 1.35rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.change-theme:hover {
+  color: var(--first-color);
+  transform: rotate(15deg);
 }
 .nav__toggle {
-  color: var(--second-color);
+  color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -202,7 +241,7 @@ img {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--text-color);
 }
 .home__social-icon:hover {
   color: var(--first-color);
@@ -270,7 +309,10 @@ img {
   padding: 0.5rem 1rem;
   margin-bottom: var(--mb-4);
   border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  background-color: var(--container-color);
+  color: var(--text-color);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 .skills__icon {
   font-size: 2rem;
@@ -355,9 +397,15 @@ img {
   font-weight: var(--font-semi);
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 1.5px solid var(--second-color);
+  background-color: var(--container-color);
+  color: var(--text-color);
+  border: 1.5px solid var(--input-border);
   outline: none;
   margin-bottom: var(--mb-4);
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+.contact__input::placeholder {
+  color: hsl(var(--hue-color), 8%, 60%);
 }
 .contact__button {
   display: block;
@@ -370,7 +418,8 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color: var(--second-color);
+  background-color: var(--footer-color);
+  transition: background-color 0.4s ease;
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -473,7 +522,7 @@ img {
     display: none;
   }
   .nav__link {
-    color: var(--second-color);
+    color: var(--text-color);
   }
   .home {
     padding: 8rem 0 2rem;
