@@ -445,6 +445,45 @@ img {
 }
 
 /* ===== MEDIA QUERIES=====*/
+
+/* ===== MOBILE HOME (AVATAR ON TOP) ===== */
+@media screen and (max-width: 767px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 0 3rem;
+    row-gap: 1.25rem;
+  }
+  .home__img {
+    position: static;
+    order: -1;
+    width: 230px;
+    margin: 0 auto;
+  }
+  .home__title {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+  }
+  .home__data p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__data div {
+    justify-content: center;
+  }
+  .home__social {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  .home__social-icon {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .home {
     row-gap: 2rem;
