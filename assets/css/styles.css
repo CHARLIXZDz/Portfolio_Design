@@ -225,6 +225,8 @@ img {
 }
 .home__data {
   align-self: center;
+  position: relative;
+  z-index: 2;
 }
 .home__title {
   font-size: var(--big-font-size);
@@ -248,9 +250,10 @@ img {
 }
 .home__img {
   position: absolute;
-  right: 0;
+  right: -0.5rem;
   bottom: 0;
   width: 260px;
+  z-index: 1;
 }
 .home__blob {
   fill: var(--first-color);
@@ -465,7 +468,8 @@ img {
     margin-right: var(--mb-4);
   }
   .home__img {
-    width: 300px;
+    width: 280px;
+    right: -0.5rem;
     bottom: 25%;
   }
   .about__container {
@@ -528,7 +532,8 @@ img {
     padding: 8rem 0 2rem;
   }
   .home__img {
-    width: 400px;
+    width: 360px;
+    right: -1.5rem;
     bottom: 10%;
   }
   .about__container {
@@ -561,7 +566,8 @@ img {
     padding: 10rem 0 2rem;
   }
   .home__img {
-    width: 450px;
+    width: 410px;
+    right: -1rem;
   }
 }
 

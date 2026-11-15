@@ -229,6 +229,8 @@ img{
 
     &__data{
         align-self: center;
+        position: relative;
+        z-index: 2;
     }
     &__title{
         font-size: var(--big-font-size);
@@ -255,9 +257,10 @@ img{
 
     &__img{
         position: absolute;
-        right: 0;
+        right: -0.5rem;
         bottom: 0;
         width: 260px;
+        z-index: 1;
     }
     &__blob{
         fill: var(--first-color);
@@ -479,7 +482,8 @@ img{
             }
         }
         &__img{
-            width: 300px;
+            width: 280px;
+            right: -0.5rem;
             bottom: 25%;
         }
     }
@@ -559,7 +563,8 @@ img{
         padding: 8rem 0 2rem;
         
         &__img{
-            width: 400px;
+            width: 360px;
+            right: -1.5rem;
             bottom: 10%;
         }
     }
@@ -599,7 +604,8 @@ img{
         padding: 10rem 0 2rem;
 
         &__img{
-            width: 450px;
+            width: 410px;
+            right: -1rem;
         }
     }
 }
